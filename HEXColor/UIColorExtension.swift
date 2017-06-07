@@ -133,6 +133,10 @@ extension UIColor {
         var a: CGFloat = 0
         self.getRed(&r, green: &g, blue: &b, alpha: &a)
         
+        if r < 0 { r = 0 }
+        if g < 0 { g = 0 }
+        if b < 0 { b = 0 }
+     
         if (includeAlpha) {
             return String(format: "#%02X%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255), Int(a * 255))
         } else {
